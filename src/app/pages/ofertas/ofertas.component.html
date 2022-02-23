@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of this.arrayDatosOferta">
+          <td scope="col">{{ item.titulo }}</td>
+          <td scope="col"><button type="button" (click)="this.goToViewDetail(item.id)"
+              class="btn btn-primary">Ver</button></td>
+          <td scope="col"><button type="button" (click)="this.deleteOffer(item.id)"
+              class="btn btn-primary">Eliminar</button></td>
+        </tr>
+    </table>
+  </div>
+
+  <div class="row mt-3 mb-3">
+            <div class="col-6">
+                  <button type="button" (click)="this.goToViewDetail2()" class="btn btn-primary">Crear Oferta</button>
+              </div>
+        </div>
+</div>

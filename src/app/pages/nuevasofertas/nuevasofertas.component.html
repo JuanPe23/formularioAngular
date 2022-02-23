@@ -1,0 +1,50 @@
+<div class="container divcenter">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="mb-5">Nueva Oferta</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="onSubmit(offersForm)" #offersForm="ngForm">
+        <div class="mb-3">
+          <label for="titulo">Titulo</label>
+          <input type="text" class="form-control" name="titulo" #titulo [(ngModel)]="offersModel.titulo" id="titulo"
+            maxlength="100" autofocus required>
+
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Descripcion</label>
+          <input type="text" class="form-control" name="descripcion" [(ngModel)]="offersModel.descripcion"
+            id="descripcion" maxlength="300" required>
+        </div>
+        <div class="mb-3">
+          <label for="empresa">Empresa</label>
+          <input type="text" class="form-control" name="empresa" [(ngModel)]="offersModel.empresa" id="empresa"
+            maxlength="50" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="salario">Salario</label>
+          <input type="number" class="form-control" name="salario" [(ngModel)]="offersModel.salario" id="salario"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" class="form-control" name="ciudad" [(ngModel)]="offersModel.ciudad" id="ciudad"
+            maxlength="50" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="offersModel.email" id="email"
+            maxlength="50" required>
+
+        </div>
+
+        <button type="submit" [disabled]="!offersForm.form.valid" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
